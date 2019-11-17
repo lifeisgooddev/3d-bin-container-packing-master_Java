@@ -1,0 +1,10 @@
+dist: trusty
+sudo: required
+
+language: java
+jdk:
+  - openjdk11
+
+after_success:
+  - cd core && mvn clean test jacoco:report coveralls:report
+
